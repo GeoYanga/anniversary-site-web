@@ -4,52 +4,218 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Lab ❤️</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
 <style>
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
-  background:linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("images/mybackground.jpg") no-repeat center center fixed;
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("images/mybackground.jpg") no-repeat center center fixed;
   background-size:cover;
   color:white;
   overflow:hidden;
 }
+
 /* LOADING */
-#loading{position:fixed;width:100%;height:100%;background:rgba(0,0,0,0.85);display:flex;justify-content:center;align-items:center;flex-direction:column;z-index:999;}
-.loader-heart{font-size:70px;animation:heartbeat 1.2s infinite;}
-@keyframes heartbeat{0%,100%{transform:scale(1);}50%{transform:scale(1.3);}}
+#loading{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.85);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+.loader-heart{
+  font-size:70px;
+  animation:heartbeat 1.2s infinite;
+}
+@keyframes heartbeat{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.3);}
+}
 
 /* GAME */
-#game{display:none;height:100vh;flex-direction:column;justify-content:center;align-items:center;text-align:center;display:flex;}
-#game h2{font-family:'Great Vibes';font-size:48px;margin-bottom:10px;}
-#gameArea{position:relative;width:320px;height:220px;}
-#gameBtn{position:absolute;padding:14px 30px;border:none;border-radius:50px;background:linear-gradient(45deg,#ff4d88,#ff7aa8);color:white;font-weight:600;cursor:pointer;transition:0.25s;}
+#game{
+  display:none;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+#game h2{
+  font-family:'Great Vibes';
+  font-size:48px;
+  margin-bottom:10px;
+}
+#gameArea{
+  position:relative;
+  width:320px;
+  height:220px;
+}
+#gameBtn{
+  position:absolute;
+  padding:14px 30px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(45deg,#ff4d88,#ff7aa8);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.25s;
+}
 
-/* APP */
-#app{display:none;min-height:100vh;padding:40px 20px;overflow:auto;display:flex;justify-content:center;}
-.container{width:100%;max-width:900px;}
-.title{font-family:'Great Vibes';font-size:52px;text-align:center;margin-bottom:30px;}
-.section{background:rgba(255,255,255,0.08);backdrop-filter:blur(18px);border-radius:25px;padding:28px 35px;margin-bottom:25px;box-shadow:0 8px 30px rgba(0,0,0,0.3);transition:0.3s;}
-.section:hover{transform:translateY(-3px);}
-.letter{font-family:'Great Vibes';font-size:22px;line-height:1.7;max-height:300px;overflow-y:auto;padding:20px;border-radius:20px;background:rgba(255,255,255,0.05);box-shadow:0 5px 15px rgba(0,0,0,0.3);}
-.letter::-webkit-scrollbar{width:6px;}
-.letter::-webkit-scrollbar-thumb{background:rgba(255,77,136,0.6);border-radius:3px;}
-.letter::-webkit-scrollbar-track{background:transparent;}
-.counter{text-align:center;font-size:18px;}
-.counter span{font-size:24px;font-weight:600;}
-button{padding:14px 30px;border:none;border-radius:50px;background:linear-gradient(45deg,#ff4d88,#ff7aa8);color:white;font-weight:600;cursor:pointer;box-shadow:0 5px 15px rgba(255,77,136,0.4);transition:0.3s;}
-button:hover{transform:scale(1.07);}
-.gallery{display:flex;gap:25px;overflow:hidden;align-items:center;}
-.photo{flex:0 0 auto;}
-.photo img{max-height:240px;width:auto;height:auto;border-radius:22px;background:rgba(255,255,255,0.05);padding:8px;box-shadow:0 8px 25px rgba(0,0,0,0.4);transition:0.4s ease;}
-.photo img:hover{transform:scale(1.08);}
-#final{display:none;position:fixed;width:100%;height:100%;background:rgba(0,0,0,0.9);display:flex;flex-direction: column;justify-content:center;align-items:center;text-align:center;z-index:1000;opacity:0;transition:opacity 1s ease;color:white;}
-#final h1{font-family:'Great Vibes';font-size:60px;margin-bottom:10px;}
-#final p{font-size:24px;margin-bottom:20px;color:white;opacity:0;transform:translateY(20px);transition: opacity 1.2s ease, transform 1.2s ease;}
-#promiseBtn{display:none;opacity:0;transition:opacity 1s ease;}
+/* MAIN APP */
+#app{
+  display:none;
+  min-height:100vh;
+  padding:40px 20px;
+  overflow:auto;
+  display:flex;
+  justify-content:center;
+}
+.container{
+  width:100%;
+  max-width:900px;
+}
+.title{
+  font-family:'Great Vibes';
+  font-size:52px;
+  text-align:center;
+  margin-bottom:30px;
+}
+.section{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border-radius:25px;
+  padding:28px 35px;
+  margin-bottom:25px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.3);
+  transition:0.3s;
+}
+.section:hover{
+  transform:translateY(-3px);
+}
+
+/* LETTER */
+.letter{
+  font-family:'Poppins', sans-serif;
+  font-size:22px;
+  line-height:1.7;
+  max-height:300px;
+  overflow-y:auto;
+  padding:20px;
+  border-radius:20px;
+  background:rgba(255,255,255,0.05);
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+.letter::-webkit-scrollbar{
+  width:6px;
+}
+.letter::-webkit-scrollbar-thumb{
+  background:rgba(255,77,136,0.6);
+  border-radius:3px;
+}
+.letter::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+.counter{
+  text-align:center;
+  font-size:18px;
+}
+.counter span{
+  font-size:24px;
+  font-weight:600;
+}
+
+button{
+  padding:14px 30px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(45deg,#ff4d88,#ff7aa8);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  box-shadow:0 5px 15px rgba(255,77,136,0.4);
+  transition:0.3s;
+}
+button:hover{
+  transform:scale(1.07);
+}
+
+/* AUTO RATIO GALLERY */
+.gallery{
+  display:flex;
+  gap:25px;
+  overflow:hidden;
+  align-items:center;
+}
+.photo{
+  flex:0 0 auto;
+}
+.photo img{
+  max-height:240px;
+  width:auto;
+  height:auto;
+  border-radius:22px;
+  background:rgba(255,255,255,0.05);
+  padding:8px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.4);
+  transition:0.4s ease;
+}
+.photo img:hover{
+  transform:scale(1.08);
+}
+
+/* FINAL */
+#final{
+  display:none;
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  z-index:1000;
+  opacity:0;
+  transition:opacity 1s ease;
+  color:white;
+}
+#final h1{
+  font-family:'Great Vibes';
+  font-size:60px;
+  margin-bottom:10px;
+}
+#final p{
+  font-size:24px;
+  margin-bottom:20px;
+  color:white;
+  opacity:0;
+  transform:translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+#promiseBtn{
+  display:none;
+  opacity:0;
+  transition:opacity 1s ease;
+}
 </style>
 </head>
 <body>
+
+<!-- Background Music -->
+<audio id="bgMusic" src="audio/love-song.mp3" loop></audio>
 
 <!-- Loading -->
 <div id="loading">
@@ -61,14 +227,17 @@ button:hover{transform:scale(1.07);}
 <div id="game">
   <h2>Catch Me If You Can ❤️</h2>
   <p>Click it 3 times to unlock 💖</p>
-  <div id="gameArea"><button id="gameBtn">Yes I Love You ❤️</button></div>
+  <div id="gameArea">
+    <button id="gameBtn">Yes I Love You ❤️</button>
+  </div>
 </div>
 
 <!-- Main App -->
 <div id="app">
-<div class="container">
-<div class="title">My Lab ❤️</div>
-<div class="section letter" id="letterText">
+  <div class="container">
+    <div class="title">My Lab ❤️</div>
+
+    <div class="section letter" id="letterText">
 Happy 1st Anniversary Lab!!! ❤️🌹
 
 Isang taon na tayo… pero hanggang ngayon parang araw-araw pa rin akong kinikilig na parang unang buwan natin. Naalala ko pa nung 1st monthsary natin, thankful na thankful ako kasi binigyan mo ako ng chance maging boyfriend mo, kahit alam nating medyo bawal pa sa paningin ng iba. Pero pinili pa rin natin ang isa’t isa. At hanggang ngayon, dala-dala ko pa rin ang pasasalamat na ‘yon.
@@ -87,96 +256,112 @@ Happy 1st Anniversary, mahal ko.
 Sa atin, walang sayang.
 Sa atin, lahat worth it.
 Ikaw lang. Always and forever. ❤️
-</div>
+    </div>
 
-<div class="section counter">
-💞 Loving you for:<br>
-<span id="days"></span>
-</div>
+    <div class="section counter">
+      💞 Loving you for:<br>
+      <span id="days"></span>
+    </div>
 
-<div class="section" style="text-align:center;">
-<button id="promiseBtn" onclick="showFinal()">My Promise ❤️</button>
-</div>
+    <div class="section" style="text-align:center;">
+      <button id="promiseBtn" onclick="showFinal()">My Promise ❤️</button>
+    </div>
 
-<div class="section">
-<h3>Our Memories</h3>
-<div class="gallery" id="gallery"></div>
-</div>
-</div>
+    <div class="section">
+      <h3>Our Memories</h3>
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </div>
 </div>
 
 <!-- Final -->
 <div id="final">
-<h1>Forever With You ❤️</h1>
-<p id="finalMessage"></p>
-<button onclick="location.reload()">Replay</button>
+  <h1>Forever With You ❤️</h1>
+  <p id="finalMessage"></p>
+  <button onclick="location.reload()">Replay</button>
 </div>
 
 <script>
 /* LOADING */
-setTimeout(()=>{document.getElementById("loading").style.display="none"; document.getElementById("game").style.display="flex";},2500);
+setTimeout(()=>{
+  document.getElementById("loading").style.display="none";
+  document.getElementById("game").style.display="flex";
+},2500);
+
 
 /* LOVE COUNTER */
-function calculateLove(){
-  const startDate=new Date("2024-02-21");
-const today=new Date();
-const diffDays=Math.floor((today-startDate)/(1000*60*60*24));
-let months=(today.getFullYear()-startDate.getFullYear())*12+(today.getMonth()-startDate.getMonth());
-if(today.getDate()<startDate.getDate()) months--;
-document.getElementById("days").innerText = "12 months / 365 days";
-}
-calculateLove();
+const startDate = new Date("2024-02-21");
+const today = new Date();
+
+// Calculate total days
+const diffTime = today - startDate;
+const diffDays = 365; // Fixed to 365 days
+
+// Calculate months
+const months = 12; // Fixed to 12 months
+
+document.getElementById("days").innerText = `${months} months / ${diffDays} days`;
 
 /* GAME */
 const gameBtn = document.getElementById("gameBtn");
 const gameArea = document.getElementById("gameArea");
-let clickCount = 0, escapeCount = 0;
+let clickCount = 0;
+let escapeCount = 0;
+const bgMusic = document.getElementById("bgMusic");
+
 function moveBtn(){
   gameBtn.style.left = Math.random()*(gameArea.clientWidth-gameBtn.offsetWidth)+"px";
   gameBtn.style.top = Math.random()*(gameArea.clientHeight-gameBtn.offsetHeight)+"px";
   const scale = 0.8 + Math.random()*0.5;
   gameBtn.style.transform = `scale(${scale}) rotate(${Math.random()*20-10}deg)`;
   escapeCount++;
-  gameBtn.style.transition = escapeCount > 5 ? "0.1s":"0.25s";
+  gameBtn.style.transition = escapeCount > 5 ? "0.1s" : "0.25s";
 }
+
 gameBtn.addEventListener("mouseover", moveBtn);
+
 gameBtn.addEventListener("click", ()=>{
   clickCount++;
-  if(clickCount<3){gameBtn.innerText=`Click me ${3-clickCount} more ❤️`; moveBtn(); return;}
+  if(clickCount < 3){
+    gameBtn.innerText = `Click me ${3-clickCount} more ❤️`;
+    moveBtn();
+    return;
+  }
   document.getElementById("game").style.display="none";
   document.getElementById("app").style.display="flex";
   document.body.style.overflow="auto";
   startApp();
+  bgMusic.play().catch(err=>console.log("Autoplay blocked, waiting for user interaction."));
 });
 
-/* TYPEWRITER + PROMISE BUTTON */
+/* START APP */
 function startApp(){
-  const letter = document.getElementById("letterText");
-  const text = letter.innerText;
+  const letter=document.getElementById("letterText");
+  const text=letter.innerText;
   letter.innerHTML="";
   let i=0;
-  function typeWriter(){
+  function type(){
     if(i<text.length){
-      letter.innerHTML += text[i]==="\n" ? "<br>":text[i];
+      letter.innerHTML += text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
       i++;
-      setTimeout(typeWriter,25);
+      setTimeout(type,25);
     } else {
       const btn = document.getElementById("promiseBtn");
       btn.style.display="inline-block";
       setTimeout(()=>{btn.style.opacity=1;},50);
     }
   }
-  typeWriter();
+  type();
 
-  const gallery = document.getElementById("gallery");
-  const totalPhotos = 138;
+  const gallery=document.getElementById("gallery");
+  const totalPhotos=138;
   for(let i=1;i<=totalPhotos;i++){
-    const div = document.createElement("div");
-    div.className = "photo";
-    div.innerHTML = `<img src="images/photo${i}.jpg" loading="lazy">`;
+    const div=document.createElement("div");
+    div.className="photo";
+    div.innerHTML=`<img src="images/photo${i}.jpg" loading="lazy">`;
     gallery.appendChild(div);
   }
-  gallery.innerHTML += gallery.innerHTML;
+  gallery.innerHTML+=gallery.innerHTML;
 
   let scrollPos=0;
   function autoScroll(){
@@ -188,22 +373,22 @@ function startApp(){
   autoScroll();
 }
 
-/* FINAL MESSAGE + FALLING HEARTS */
+/* FINAL */
 function showFinal(){
   const final = document.getElementById("final");
   const message = document.getElementById("finalMessage");
   message.innerText = "I will stay with you forever. No matter what happens, I'm always with you. ❤️";
-  final.style.display="flex";
+  final.style.display = "flex";
   setTimeout(()=>{final.style.opacity=1;},50);
   setTimeout(()=>{message.style.opacity=1; message.style.transform="translateY(0)";},400);
   setInterval(createHeart,300);
 }
 
 function createHeart(){
-  const heart = document.createElement("div");
+  const heart=document.createElement("div");
   heart.innerText="❤️";
   heart.style.position="fixed";
-  heart.style.fontSize=(Math.random()*24+16)+"px";
+  heart.style.fontSize=Math.random()*24+16+"px";
   heart.style.left=Math.random()*window.innerWidth+"px";
   heart.style.top="-50px";
   heart.style.pointerEvents="none";
@@ -224,5 +409,6 @@ function createHeart(){
   fall();
 }
 </script>
+
 </body>
 </html>
