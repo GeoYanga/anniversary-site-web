@@ -290,15 +290,15 @@ setTimeout(()=>{
 
 
 /* LOVE COUNTER */
-const startDate = new Date("2024-02-21");
-const today = new Date();
+const startDate = new Date("2024-02-21"); // Start of your relationship
+const endDate = new Date("2026-02-21");   // Your anniversary date
 
 // Calculate total days
-const diffTime = today - startDate;
-const diffDays = 365; // Fixed to 365 days
+const diffTime = endDate - startDate; 
+const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); // 730 days
 
 // Calculate months
-const months = 12; // Fixed to 12 months
+const months = 24; // 2 years = 24 months
 
 document.getElementById("days").innerText = `${months} months / ${diffDays} days`;
 
